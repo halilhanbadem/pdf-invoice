@@ -4,7 +4,7 @@ interface Helpers {
 	calcItemTotal(item: ItemInfo): number | string;
 	calcTax(items: ItemInfo[]): number | string;
 	calcSubTotal(items: ItemInfo[]): number | string;
-	calcFinalTotal(items: ItemInfo[]): number | string;
+	calcFinalTotal(items: ItemInfo[], optionalField: Number): number | string;
 	formatCurrency(
 		amount: number | string,
 		args?: Record<string, string>
@@ -71,22 +71,25 @@ const helper: Helpers = {
 		return total.toFixed(2);
 	},
 
+
 	/**
 	 * Calculate total final price.
 	 *
 	 * @param {Object} items.
+	 * @param {Number} optionalField
 	 * @returns {number} total.
 	 * @since 1.0.0
 	 */
-	calcFinalTotal: function (items: ItemInfo[]): number | string {
+	calcFinalTotal: function (items: ItemInfo[], optionalField: Number = 0): number | string {
 		if (items.length === 0) {
 			return 0;
 		}
 
 		const subTotal = Number(this.calcSubTotal(items));
 		const tax = Number(this.calcTax(items));
+		const optionalFieldValue = Number(optionalField);
 
-		return (subTotal + tax).toFixed(2);
+		return (subTotal + tax + optionalFieldValue).toFixed(2);
 	},
 
 	/**

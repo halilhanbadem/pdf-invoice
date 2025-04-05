@@ -19,6 +19,7 @@ const defaultConfig = {
 		total: "Total",
 		subTotal: "Subtotal",
 		totalTax: "Total Tax",
+		optionalField: "Delivery Fee"
 	},
 };
 

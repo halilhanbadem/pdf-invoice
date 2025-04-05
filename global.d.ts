@@ -30,6 +30,7 @@ export interface InvoiceInfo {
 	path: string;
 	currency?: string;
 	locale?: string;
+	optionalField?: number;
 }
 
 export interface ItemInfo {
@@ -100,5 +101,6 @@ export interface Configuration {
 		total?: string;
 		subTotal?: string;
 		totalTax?: string;
+		optionalField?: string;
 	};
 }

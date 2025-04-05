@@ -24,29 +24,30 @@ const payload = {
 		number: 1721,
 		date: "25/12/2023",
 		dueDate: "25/12/2023",
-		status: "Paid!",
-		locale: "de-DE", // en-US, fr-FR, es-ES, de-DE, it-IT, pt-PT
-		currency: "EUR", // USD, GBP, JPY, INR, EUR, AUD
+		status: "PAID",
+		locale: "en-US", // en-US, fr-FR, es-ES, de-DE, it-IT, pt-PT
+		currency: "USD", // USD, GBP, JPY, INR, EUR, AUD
 		path: path.join(__dirname, "invoice.pdf"),
+		optionalField: 10,
 	},
 	items: [
 		{
 			name: "Cloud VPS Server - Starter Plan",
-			quantity: 1,
+			quantity: 3,
 			price: 400,
-			tax: 13,
+			tax: 9.375,
 		},
 		{
 			name: "Domain Registration - example.com",
 			quantity: 1,
 			price: 20,
-			tax: 13.5,
+			tax: 9.375,
 		},
 		{
 			name: "Maintenance Charge - Yearly",
 			quantity: 1,
 			price: 300,
-			tax: 0,
+			tax: 9.375,
 		},
 	],
 	qr: {
@@ -59,44 +60,14 @@ const payload = {
 /* --------------------------------------------------------------------------
 	Optional: Config
   -------------------------------------------------------------------------- */
-const config = {
-	string: {
-		invoice: "F A C T U A",
-		refNumber: "Referencia",
-		date: "Fecha",
-		dueDate: "Fecha de vencimiento",
-		status: "επί πληρωμή",
-		billTo: "Facturar a",
-		item: "Artículo",
-		quantity: "Cantidad",
-		price: "Precio",
-		tax: "Impuesto",
-		total: "Total",
-		subTotal: "Subtotal",
-		totalTax: "Total Impuesto",
-	},
-	style: {
-		font: "Noto", // "Helvetica", "Times", "Courier"
-		fontSize: 10,
-		lineHeight: 1.2,
-		color: "#000000",
-	},
-	font: {
-		Noto: {
-			normal: path.join(__dirname, "fonts/noto/regular.ttf"),
-			italics: path.join(__dirname, "fonts/noto/italic.ttf"),
-			bold: path.join(__dirname, "fonts/noto/bold.ttf"),
-			bolditalics: path.join(__dirname, "fonts/noto/bold-italic.ttf"),
-		},
-	},
-};
+
 
 /**
  * Generate PDF invoice.
  */
 const createPDF = async () => {
 	try {
-		const invoice = new PDFInvoice(payload, config);
+		const invoice = new PDFInvoice(payload);
 		const result = await invoice.create();
 		console.log("✨ [Success] Invoice created : " + result + "\n");
 	} catch (err) {

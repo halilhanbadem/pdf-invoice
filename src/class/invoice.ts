@@ -493,10 +493,21 @@ export class PDFInvoice {
 									currOptions
 								)}`,
 							],
+							...((this.invoice?.optionalField || 0) > 0
+								? [
+									[
+										`\n ${this.config.string.optionalField}`,
+										`\n ${helper.formatCurrency(
+											this.invoice.optionalField,
+											currOptions
+										)}`,
+									],
+								]
+								: []),
 							[
 								`\n ${this.config.string.total}`,
 								`\n ${helper.formatCurrency(
-									helper.calcFinalTotal(this.items),
+									helper.calcFinalTotal(this.items, this.invoice.optionalField),
 									currOptions
 								)}`,
 							],
