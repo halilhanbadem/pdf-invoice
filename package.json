@@ -1,6 +1,6 @@
 {
 	"name": "@halilhanbadem/pdf-invoice",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"author": "halilhanbadem",
 	"description": "Simple yet powerful node JS library that generates PDF invoice on the fly.",
 	"license": "MIT",
