@@ -1,4 +1,4 @@
-![PDF Invoice](https://github.com/h1dd3nsn1p3r/pdf-invoice/blob/development/examples/hero.png)
+![PDF Invoice](https://github.com/halilhanbadem/pdf-invoice/blob/development/examples/hero.png)
 
 📑 Simple yet powerful JavaScript library that generates PDF invoice, estimates & payment receipts from a JSON data. It can be used in any Node JS/Bun JS environment. 
 
@@ -7,19 +7,19 @@
 via npm:
 
 ```bash
-npm install @h1dd3nsn1p3r/pdf-invoice
+npm install @halilhanbadem/pdf-invoice
 ```
 
 via yarn:
 
 ```bash
-yarn add @h1dd3nsn1p3r/pdf-invoice
+yarn add @halilhanbadem/pdf-invoice
 ```
 
 via pnpm:
 
 ```bash
-pnpm add @h1dd3nsn1p3r/pdf-invoice
+pnpm add @halilhanbadem/pdf-invoice
 ```
 
 ## Use
@@ -27,16 +27,16 @@ pnpm add @h1dd3nsn1p3r/pdf-invoice
 Once installed, you can import either using `require` or `import`:
 
 ```js
-const { PDFInvoice } = require('@h1dd3nsn1p3r/pdf-invoice');
+const { PDFInvoice } = require('@halilhanbadem/pdf-invoice');
 ```
 
 or ES6 import:
 
 ```js
-import { PDFInvoice } from '@h1dd3nsn1p3r/pdf-invoice';
+import { PDFInvoice } from '@halilhanbadem/pdf-invoice';
 ```
 
-`PDFInvoice` is a class that takes the payload as an argument. The payload is the data that you want to show on the invoice. For more information check the [Payload data](https://github.com/h1dd3nsn1p3r/pdf-invoice/blob/stable/examples/example.ts) example. 
+`PDFInvoice` is a class that takes the payload as an argument. The payload is the data that you want to show on the invoice. For more information check the [Payload data](https://github.com/halilhanbadem/pdf-invoice/blob/stable/examples/example.ts) example. 
 
 ## Payload Data
 
@@ -250,7 +250,7 @@ const note = "Thank you for your business.";
 Once you have the payload ready, you can generate the PDF using the following code:
 
 ```js
-const { PDFInvoice } = require('@h1dd3nsn1p3r/pdf-invoice');
+const { PDFInvoice } = require('@halilhanbadem/pdf-invoice');
 
 const handleInvoice = async(): Promise<void> => {
     
@@ -281,7 +281,7 @@ If required you can change the configuration of the invoice. It is an object wit
 All the text strings that are used in the invoice can be customized. For example:
 
 ```js
-const { PDFInvoice } = require('@h1dd3nsn1p3r/pdf-invoice');
+const { PDFInvoice } = require('@halilhanbadem/pdf-invoice');
 
 const create = async(): Promise<void> => {
     
@@ -358,21 +358,21 @@ const config = {
 },
 };
 ```
-If you need additional information do check the [example](https://github.com/h1dd3nsn1p3r/pdf-invoice/blob/development/examples/example.ts). In the example, I have used "Noto" and the `TTF` files of Noto font are included in the `fonts` directory. If you have non-latin characters, then you can use any custom font that supports the characters.
+If you need additional information do check the [example](https://github.com/halilhanbadem/pdf-invoice/blob/development/examples/example.ts). In the example, I have used "Noto" and the `TTF` files of Noto font are included in the `fonts` directory. If you have non-latin characters, then you can use any custom font that supports the characters.
 
 ## Types
 
-This library is written in TypeScript. If you need to import the types, then you can import them from `global.d.ts` file. Refer to [Global types](https://github.com/h1dd3nsn1p3r/pdf-invoice/blob/stable/global.d.ts) file for more information.
+This library is written in TypeScript. If you need to import the types, then you can import them from `global.d.ts` file. Refer to [Global types](https://github.com/halilhanbadem/pdf-invoice/blob/stable/global.d.ts) file for more information.
 
 Example:
 
 ```js
-import type { CompanyInfo, CustomerInfo, InvoiceInfo, ItemInfo, QRInfo, InvoicePayLoad } from '@h1dd3nsn1p3r/pdf-invoice/global.d.ts';
+import type { CompanyInfo, CustomerInfo, InvoiceInfo, ItemInfo, QRInfo, InvoicePayLoad } from '@halilhanbadem/pdf-invoice/global.d.ts';
 ```
 
 ## Changelog: 
 
-Refer to [releases](https://github.com/h1dd3nsn1p3r/pdf-invoice/releases) section for more information.
+Refer to [releases](https://github.com/halilhanbadem/pdf-invoice/releases) section for more information.
 
 ## Contributing
 
